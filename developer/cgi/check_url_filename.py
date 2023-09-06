@@ -16,13 +16,13 @@ if len(sys.argv) > 2:
 
 
 try:
-    req = Request(url, None, headers)
-    response = urlopen(req)
-    _, params = cgi.parse_header(
-        response.headers.get('Content-Disposition', ''))
-    filename = params['filename']
+  req = Request(url, None, headers)
+  response = urlopen(req)
+  _, params = cgi.parse_header(
+      response.headers.get('Content-Disposition', ''))
+  filename = params['filename']
 except Exception:
-    import traceback
-    filename = 'generic exception: ' + traceback.format_exc()
+  import traceback
+  filename = f'generic exception: {traceback.format_exc()}'
 
 print(filename)

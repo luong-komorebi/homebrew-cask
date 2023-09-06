@@ -15,11 +15,11 @@ if len(sys.argv) > 2:
     headers = {'User-Agent': ua}
 
 try:
-    req = Request(url, None, headers)
-    response = urlopen(req)
-    redir = response.geturl()
+  req = Request(url, None, headers)
+  response = urlopen(req)
+  redir = response.geturl()
 except Exception:
-    import traceback
-    redir = 'generic exception: ' + traceback.format_exc()
+  import traceback
+  redir = f'generic exception: {traceback.format_exc()}'
 
 print(redir)
